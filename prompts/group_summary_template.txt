@@ -1,0 +1,19 @@
+Here are the details of a NiFi process group. 
+Nodes represent the components like processors, controller service, input port, output port, funnel, etc. and their key properties in yaml format
+Edges represent the connections between the components yaml format. The properties from_id and to_id in edge presents the ids of the nodes. maxWorkQueueSize represents the queue size with a default of 10000, loadBalanceStrategy defaults to DO_NOT_LOAD_BALANCE, and executionNode represents the nifi node which will execute the component and it defaults to ALL.
+
+nodes:
+{nodes_yaml}
+
+edges:
+{edges_yaml}
+
+
+Here are the rules on how to interpret the data. 
+1. Identify which nodes are sources (no incoming edges), destinations (no outgoing edges), and transformers (both incoming and outgoing)
+2. Identify the names or endpoints of sources and destinations from the node properties
+3. Identify the flow based on the from_id and to_id in edges section
+4. Identify the type and schedule of the flow based on the executionNode and schedule properties of the nodes
+
+
+Create an execute summary (for an IT director or a senior architect) of the process group in one concise paragraph with names and endpoints of sources, destinations, and how the data is being transformed. Include details like queue size, execution node, load balance strategy if they are not defaults. Do not include UUIDs or state the obvious.

@@ -1,0 +1,10 @@
+model: llama3                # Ollama model name
+ollama_host: http://localhost:11434
+output_file: nifi_flow_report.md
+summarization:
+  include_subgroups: true
+  summary_tone: executive
+  max_summary_length: 200      # tokens or recommended length
+logging_level: INFO
+
+
